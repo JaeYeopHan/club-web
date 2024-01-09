@@ -16,5 +16,11 @@
       "status": 308
     }
   ],
+  "rewrites": [
+    {
+      "source": "/((?!assets/).*)",
+      "destination": "/api/ssr.js"
+    }
+  ],
   "overrides": {}
 }

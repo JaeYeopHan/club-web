@@ -6,6 +6,7 @@
     "dev": "pnpm run server:dev",
     "prod": "pnpm run lint && pnpm run build && pnpm run server:prod",
     "build": "vite build",
+    "vercel-build": "pnpm run build",
     "server": "node --loader ts-node/esm ./server/index.ts",
     "server:dev": "pnpm run server",
     "server:prod": "cross-env NODE_ENV=production pnpm run server"
