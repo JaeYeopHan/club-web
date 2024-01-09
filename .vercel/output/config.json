@@ -14,13 +14,27 @@
         "Location": "/$1"
       },
       "status": 308
-    }
-  ],
-  "rewrites": [
+    },
     {
-      "source": "/((?!assets/).*)",
-      "destination": "/api/ssr.js"
+      "handle": "filesystem"
+    },
+    {
+      "src": "^/api/ssr$",
+      "dest": "/api/ssr",
+      "check": true
+    },
+    {
+      "src": "^((?!/api).*)$",
+      "dest": "/ssr_/?__original_path=$1",
+      "check": true
     }
   ],
-  "overrides": {}
+  "overrides": {
+    "404.html": {
+      "path": "404"
+    },
+    "index.html": {
+      "path": ""
+    }
+  }
 }
