@@ -3,15 +3,10 @@
     "allowJs": false,
     "allowSyntheticDefaultImports": true,
     "downlevelIteration": true,
-    "esModuleInterop": true,
     "experimentalDecorators": true,
     "forceConsistentCasingInFileNames": true,
     "inlineSources": true,
     "isolatedModules": true,
-    "jsx": "preserve",
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "module": "esnext",
-    "moduleResolution": "node",
     "noFallthroughCasesInSwitch": true,
     "noImplicitReturns": true,
     "noUnusedLocals": true,
@@ -19,9 +14,27 @@
     "preserveConstEnums": true,
     "removeComments": false,
     "resolveJsonModule": true,
-    "skipLibCheck": true,
     "sourceMap": true,
+    "baseUrl": ".",
     "strict": true,
-    "target": "es6"
+    "module": "ES2020",
+    "target": "ES2020",
+    "moduleResolution": "Bundler",
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "types": ["vite/client"],
+    "jsx": "react-jsx",
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "paths": {
+      "~/*": ["./*"]
+    },
   },
+  "ts-node": {
+    "transpileOnly": true,
+    "esm": true,
+    "compilerOptions": {
+      "module": "Node16",
+      "moduleResolution": "Node16"
+    }
+  }
 }
